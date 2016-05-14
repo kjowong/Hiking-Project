@@ -23,6 +23,10 @@ html{
 
 }
 
+.header {
+  color: #ffffff;
+}
+
   h1 {
     text-align: center;
     font-size: 60px;
