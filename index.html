@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.0.26/css/bulma.css'>
+        <link rel="stylesheet" type="text/css" media="all" href="style.css">
+        <title>Take a Hike!</title>
+        
+    </head>
+    
+    
+    <body>
+        
+        <div class="body_container">
+        <div id='input_container'>
+
+        <div id ='header'></div>
+        <h1>Take a hike!</h1>
+        </div><!--end .input_container-->
+                    
+        <div class="container">
+            <form id = "inputForm" onSubmit=" return checkForInputs();">
+                <div id='zip_div'>
+                    <label for='zip'>Where are you?</label>
+                    <input type='text' id='zip' placeholder="zip code" required>
+                
+                </div><!--end #zip_div-->
+                <div class="clear"></div>
+                <div id='radius_div'>
+                    <label for='radius'>How far are you willing to drive?</label>
+                    <input type='text' id='radius' placeholder="number of miles" required><br>
+                </div><!--end #radius_div-->
+                <div><button id ="button" type="button" class="button is-success is-medium">Give me my hikes!</button></div>    <!--the type string needs to match where the click event handler is pointing to-->
+            </form>
+        
+        </div> <!-- end .container -->
+       
+       <div id='returned_hikes'></div>
+       
+        <div class="clear"></div>
+        
+        </div><!--end .body_container-->
+        <div class="spacer">
+        </div><!--end .spacer-->
+        <footer>
+            (C) SKCD May 2016
+        </footer>
+
+        
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js'></script>
+          <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script src='script.js'></script>
+    </body>
+</html>
