@@ -6,98 +6,90 @@
 }
 
 body {
-      /*vertical-align: middle;*/
-      /*background-color: #ddd;*/
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+      font-family: Futura, "Trebuchet MS", Arial, sans-serif;
       font-size: 18px;
-      /*background: url("zion.jpg");*/
       color: #1F1F2E;
       margin-left: 100px;
-
-      }
-html{
-  background: url("images/trees.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-
 }
 
-.header {
-  color: #ffffff;
+html {
+    background: url("images/trees.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
-  h1 {
+h1 {
     text-align: center;
     font-size: 60px;
     margin-bottom: 20px;
+}
 
-  }
-
-  #zip_div {
+#zip_div {
     /*vertical-align: middle;*/
-    display: inline-block;
+    display: center;
     text-align: center;
     float:center;
     margin-bottom: 18px;
-  }
+}
 
-  #radius_div {
-    display: inline-block;
+#radius_div {
+    /*display: inline-block;*/
+    display: center
     text-align: center;
     float:center;
     
-  }
+}
 
-  #zip {
+#zip {
     text-align: center;
-  }
+}
 
-  #radius {
+#radius {
     text-align: center;
-  }
+}
 
-  #button {
+#button {
     text-align: center;
     float:center;
     margin: 20px 20px 20px 0px;
 
-  }
+}
   
-  #returnedHikes {
-      padding: 50px;
-      background: rgba(0,0,0,0.5);
-  }
+#returnedHikes {
+    padding: 50px;
+    background: rgba(0,0,0,0.5);
+}
 
-  .container {
+.container {
     width: 550px;
     margin: 40px;
     background: rgba(255,255,255,.40);
     padding: 15px;
     border-radius: 15px;
-  }
+}
 
-  .output_container {
+.output_container {
     width: 1000px;
     margin: 40px;
     background: rgba(255,255,255,.40);
     padding: 15px;
     border-radius: 15px;
-    
-  }
+}
 
-  .spacer {
+.spacer {
     margin-bottom: 240px;
-  }
+}
 
-  a {
+a {
     color: #0B486B;
     font-size: 23px;
-  }
+}
 
-  footer {
+footer {
     text-align: center;
     font-size: 40%;
     color: white;
     padding-top:20px;
-  }
+}
