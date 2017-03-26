@@ -1,15 +1,9 @@
 $(document).ready(function(){ //function runs only when document is ready
-
 	$("button").click(function(){ //function runs when button is clicked
         $("button").addClass("is-loading"); //changes to a loading button when clicked
 		var myInputZip = $("#zip").val();
 		var myInputRadius = $("#radius").val();
-		
-		console.log("you are such a badass");
-		console.log("it's not broken, it's just taking a while to load....");
-		console.log("the input zip is: " + myInputZip);
-		console.log("the input radius is: " + myInputRadius);
-		
+
 		$.ajax({ //uses ajax to access 1st API (Google Maps)
 			"Access-Control-Allow-Origin": "*", //fixes any cross-origin issues
 		    headers: { "Accept": "application/json"},
@@ -20,8 +14,7 @@ $(document).ready(function(){ //function runs only when document is ready
 		    dataType: "JSON",
 		    jsonpCallback: "callback",
 		    success: function(data) {
-		    	console.log("zip code success function is successful");
-				
+
 				var lat = data.results[0].geometry.location.lat;
 				var lon = data.results[0].geometry.location.lng;
 				
@@ -31,14 +24,13 @@ $(document).ready(function(){ //function runs only when document is ready
 				    data: {}, // Additional parameters here
 				    dataType: "json",
 				    success: function(data) { 
-				    	console.log("the success function in ajax is working");
-					    	
+
 					    	var returnedHikes = _.pluck(data.places, "name"); //plucking all values based on key 'name'
 					    	console.log(returnedHikes);
 					    	var returnedCities = _.pluck(data.places, "city"); //plucking all values based on key 'city'
 					    	console.log(returnedCities);
 
-					    	if (returnedHikes == 0) {
+					    	if (returnedHikes === 0) {
 					    		$("#returned_hikes").append("<div class='output_container'>Sorry, there aren't any hikes nearby. Try expanding your radius.</div>");
 					    		console.log("inside of if statement");
 					    	} 
@@ -49,14 +41,12 @@ $(document).ready(function(){ //function runs only when document is ready
 						    		var eachReturnedCity = returnedCities[i];
 						    		var eachReturnedDescription = returnedDescriptions;
 						    		$("#returned_hikes").append("<div class='output_container'><ul><li><a href=https://www.google.com/search?q=" + eachReturnedHike + " " + eachReturnedCity + " " + "trailhead" + "' target=_blank>" + eachReturnedHike + "</a></li></ul><ul><li>" + eachReturnedDescription + "</li></ul><br></div>");
-					    		
-					    		}	//end of else statement
-					    	} //end for loop
+					    		}	//end of for loop
+					    	} //end else statement
 
 					    	$("button").on("click", function(){
-			                    $("#returned_hikes").empty() //emptues out the previous results
+			                    $("#returned_hikes").empty(); //empties out the previous results
 			                });
-					    	
 
 							$("#test").text("append dammit");
 					    	console.log(returnedHikes);
@@ -70,8 +60,8 @@ $(document).ready(function(){ //function runs only when document is ready
 					    xhr.setRequestHeader("X-Mashape-Authorization", "Dj2zq0XDflmshi0eo7c7BX1KGoSQp1NzRTDjsnKUs68Z30N9rW"); // Enter here your Mashape key
 					 }
 					// }	//end of else statement
-					}); //end of success function
-				    },
+				}); //end of outside success function
+			},
 		    // error: function(err) { alert(err); },
 		    error: function(err) { 
 				$("#returned_hikes").append("Check your inputs.");
